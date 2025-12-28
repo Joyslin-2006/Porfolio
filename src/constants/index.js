@@ -23,6 +23,9 @@ import {
   jobit,
   tripguide,
   threejs,
+  Freelancely,
+  AdSnap,
+  HandGesture, 
 } from "../assets";
 
 export const navLinks = [
@@ -42,19 +45,19 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Frontend Developer",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "Javascript Developer",
     icon: mobile,
   },
   {
-    title: "Backend Developer",
+    title: "React Developer",
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "UI Developer",
     icon: creator,
   },
 ];
@@ -73,16 +76,8 @@ const technologies = [
     icon: javascript,
   },
   {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
     name: "React JS",
     icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
   },
   {
     name: "Tailwind CSS",
@@ -97,10 +92,6 @@ const technologies = [
     icon: mongodb,
   },
   {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
     name: "git",
     icon: git,
   },
@@ -108,63 +99,20 @@ const technologies = [
     name: "figma",
     icon: figma,
   },
-  {
-    name: "docker",
-    icon: docker,
-  },
 ];
 
 const experiences = [
+  
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
+    title: "Frontend Developer",
+    company_name: "Lunewise Technologies",
     icon: meta,
     iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    date: "June 2025 - July 2025",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Improved LearnWell Career Platform design using React.js, Node.js, Express.js, and Tailwind CSS",
+      "Led React.js web app redesign, boosting responsiveness and retention.",
+      "Developed MindMend AI mental health app frontend in React Native, enabling scalable, cross-platform UI for Android and iOS.",
     ],
   },
 ];
@@ -198,16 +146,16 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Freelancely",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "Web App Full-stack app with React + Tailwind, Supabase backend, and real-time task sharing. Includes CRUD, row-level security, image uploads, and live data sync. UI built with 21st.dev for modern responsiveness",
     tags: [
       {
         name: "react",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "Supabase",
         color: "green-text-gradient",
       },
       {
@@ -215,50 +163,50 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: Freelancely,
+    source_code_link: "https://github.com/Joyslin-2006/Freelancely.git",
   },
   {
-    name: "Job IT",
+    name: "Snap Studio",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "SaaS-style app built with Streamlit and Python, integrating Bria AI APIs for advanced imagegeneration and editing. Implemented structured architecture with components, services, and utils, along with error handling, and logging",
     tags: [
       {
-        name: "react",
+        name: "Streamlit",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "Python",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "RestAPI",
         color: "pink-text-gradient",
       },
     ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+    image: AdSnap,
+    source_code_link: "https://github.com/Joyslin-2006/adsnap-studio.git",
   },
   {
-    name: "Trip Guide",
+    name: "Gesture Guide Glow",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+      "Full-stack, self-made website built with React and deployed on Vercel. Showcases a hand gesture recognition project using MediaPipe and Python. Focused on explaining the Python code and designed to be beginner-friendly",
     tags: [
       {
-        name: "nextjs",
+        name: "React",
         color: "blue-text-gradient",
       },
       {
-        name: "supabase",
+        name: "MediaPipe",
         color: "green-text-gradient",
       },
       {
-        name: "css",
+        name: "Python",
         color: "pink-text-gradient",
       },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+    image: HandGesture,
+    source_code_link: "https://github.com/Joyslin-2006/gesture-guide-glow.git",
   },
 ];
 

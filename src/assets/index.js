@@ -29,6 +29,9 @@ import tesla from "./company/tesla.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import Freelancely from "./Freelancely.png";
+import AdSnap from "./AdSnap.png";
+import HandGesture from "./HandGesture.png";
 
 export {
   logo,
@@ -59,4 +62,7 @@ export {
   carrent,
   jobit,
   tripguide,
+  Freelancely,
+  AdSnap,
+  HandGesture,
 };

@@ -37,11 +37,11 @@ const ComputersCanvas = () => {
     const mediaQuery = window.matchMedia("(max-width: 500px)");
 
     // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
-
+    setIsMobile(mediaQuery.matches);//Initial render trigger
+ 
     // Define a callback function to handle changes to the media query
     const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
+      setIsMobile(event.matches); //Resize-triggered re-render
     };
 
     // Add the callback function as a listener for changes to the media query

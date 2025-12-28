@@ -47,11 +47,14 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
       >
-        I'm a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+       Hi, I’m Joyslin Jenifer, a third-year Computer Science 
+       and Engineering student and tech enthusiast. I build
+        interactive web applications with clean, user-friendly interfaces, 
+        specializing in JavaScript, React and Node.js. With hands-on experience 
+        from a frontend development internship, 
+        I’m passionate about creating efficient, 
+        scalable software solutions that make a real-world 
+        impact.
       </motion.p>
 
       <div className='mt-20 flex flex-wrap gap-10'>

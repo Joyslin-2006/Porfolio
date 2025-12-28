@@ -10,7 +10,7 @@ import {
 
 import CanvasLoader from "../Loader";
 
-const Ball = (props) => {
+const Ball = (props) => { //child component to create a ball with a decal texture
   const [decal] = useTexture([props.imgUrl]);
 
   return (
@@ -37,7 +37,7 @@ const Ball = (props) => {
   );
 };
 
-const BallCanvas = ({ icon }) => {
+const BallCanvas = ({ icon }) => { //parent component to set up the canvas for rendering the ball
   return (
     <Canvas
       frameloop='demand'
