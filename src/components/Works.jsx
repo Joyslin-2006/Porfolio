@@ -98,10 +98,10 @@ const Works = () => {
   const fadeVariants = isMobile ? {} : fadeIn("", "", 0.1, 1);
 
   return (
-    <>
+    <div className='relative z-10'>
       <motion.div variants={textVariants}>
-        <p className={`${styles.sectionSubText} `}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
+        <p className={`${styles.sectionSubText} text-white`}>My work</p>
+        <h2 className={`${styles.sectionHeadText} text-white`}>Projects.</h2>
       </motion.div>
 
       <div className='w-full flex'>
@@ -122,7 +122,7 @@ const Works = () => {
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

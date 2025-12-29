@@ -15,8 +15,10 @@ const App = () => {
         <Tech />
         <Works />
         {/* <Feedbacks /> */}
-        <div className='relative z-0'>
+        <div className='relative z-10'>
           <Contact />
+        </div>
+        <div className='absolute inset-0 z-[-1]'>
           <StarsCanvas />
         </div>
       </div>

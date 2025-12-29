@@ -11,7 +11,17 @@ import {
 import CanvasLoader from "../Loader";
 
 const Ball = (props) => { //child component to create a ball with a decal texture
+  if (!props.imgUrl) {
+    console.warn("No image URL provided for Ball component");
+    return null;
+  }
+
   const [decal] = useTexture([props.imgUrl]);
+  
+  if (!decal) {
+    console.warn("Texture not loaded for:", props.imgUrl);
+    return null;
+  }
 
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>

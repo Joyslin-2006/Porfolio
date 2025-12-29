@@ -72,12 +72,12 @@ const Experience = () => {
   const textVariants = isMobile ? {} : textVariant();
 
   return (
-    <>
+    <div className='relative z-10'>
       <motion.div variants={textVariants}>
-        <p className={`${styles.sectionSubText} text-center`}>
+        <p className={`${styles.sectionSubText} text-center text-white`}>
           What I have done so far
         </p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
+        <h2 className={`${styles.sectionHeadText} text-center text-white`}>
           Work Experience.
         </h2>
       </motion.div>
@@ -92,7 +92,7 @@ const Experience = () => {
           ))}
         </VerticalTimeline>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -68,15 +68,15 @@ const About = () => {
   const fadeVariants = isMobile ? {} : fadeIn("", "", 0.1, 1);
 
   return (
-    <>
+    <div className='relative z-10'>
       <motion.div variants={textVariants}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <p className={`${styles.sectionSubText} text-white`}>Introduction</p>
+        <h2 className={`${styles.sectionHeadText} text-white`}>Overview.</h2>
       </motion.div>
 
       <motion.p
         variants={fadeVariants}
-        className='mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]'
+        className='mt-4 text-white text-[17px] max-w-3xl leading-[30px]'
       >
        Hi, I’m Joyslin Jenifer, a third-year Computer Science 
        and Engineering student and tech enthusiast. I build
@@ -93,7 +93,7 @@ const About = () => {
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
