@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
@@ -16,31 +16,46 @@ const ProjectCard = ({
   image,
   source_code_link,
 }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mq.matches);
+
+    const handler = (e) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  const tiltProps = isMobile
+    ? { tiltMaxAngleX: 0, tiltMaxAngleY: 0, scale: 1, transitionSpeed: 0 }
+    : { tiltMaxAngleX: 45, tiltMaxAngleY: 45, scale: 1, transitionSpeed: 450 };
+
+  const motionVariants = isMobile ? {} : fadeIn("up", "spring", index * 0.5, 0.75);
+
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div variants={motionVariants}>
       <Tilt
-        tiltMaxAngleX={45}
-        tiltMaxAngleY={45}
-        scale={1}
-        transitionSpeed={450}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
+        {...tiltProps}
+        className='bg-tertiary p-5 rounded-2xl sm:max-w-[90%] md:w-[360px] w-full'
       >
         <div className='relative w-full h-[230px]'>
           <img
             src={image}
             alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
+            className='w-full h-full max-w-full object-cover rounded-2xl'
           />
 
           <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
             <div
               onClick={() => window.open(source_code_link, "_blank")}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+              className='black-gradient w-11 h-11 sm:w-10 sm:h-10 rounded-full flex justify-center items-center cursor-pointer'
             >
               <img
                 src={github}
                 alt='source code'
-                className='w-1/2 h-1/2 object-contain'
+                className='w-1/2 h-1/2 max-w-full object-contain'
               />
             </div>
           </div>
@@ -67,16 +82,31 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mq.matches);
+
+    const handler = (e) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  const textVariants = isMobile ? {} : textVariant();
+  const fadeVariants = isMobile ? {} : fadeIn("", "", 0.1, 1);
+
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div variants={textVariants}>
         <p className={`${styles.sectionSubText} `}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
       </motion.div>
 
       <div className='w-full flex'>
         <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
+          variants={fadeVariants}
           className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
         >
           Following projects showcases my skills and experience through

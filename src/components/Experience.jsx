@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -27,7 +27,7 @@ const ExperienceCard = ({ experience }) => {
           <img
             src={experience.icon}
             alt={experience.company_name}
-            className='w-[60%] h-[60%] object-contain'
+            className='w-full md:w-[60%] h-[60%] max-w-full object-contain'
           />
         </div>
       }
@@ -57,9 +57,23 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mq.matches);
+
+    const handler = (e) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  const textVariants = isMobile ? {} : textVariant();
+
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div variants={textVariants}>
         <p className={`${styles.sectionSubText} text-center`}>
           What I have done so far
         </p>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -13,11 +13,26 @@ const FeedbackCard = ({
   designation,
   company,
   image,
-}) => (
-  <motion.div
-    variants={fadeIn("", "spring", index * 0.5, 0.75)}
-    className='bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full'
-  >
+}) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mq.matches);
+
+    const handler = (e) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  const motionVariants = isMobile ? {} : fadeIn("", "spring", index * 0.5, 0.75);
+
+  return (
+    <motion.div
+      variants={motionVariants}
+      className='bg-black-200 p-10 rounded-3xl xs:max-w-[90%] sm:w-[320px] w-full'
+    >
     <p className='text-white font-black text-[48px]'>"</p>
 
     <div className='mt-1'>
@@ -36,20 +51,35 @@ const FeedbackCard = ({
         <img
           src={image}
           alt={`feedback_by-${name}`}
-          className='w-10 h-10 rounded-full object-cover'
+          className='w-11 h-11 sm:w-10 sm:h-10 rounded-full max-w-full object-cover'
         />
       </div>
     </div>
   </motion.div>
-);
+  );
+};
 
 const Feedbacks = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    setIsMobile(mq.matches);
+
+    const handler = (e) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
+  const textVariants = isMobile ? {} : textVariant();
+
   return (
     <div className={`mt-12 bg-black-100 rounded-[20px]`}>
       <div
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
       >
-        <motion.div variants={textVariant()}>
+        <motion.div variants={textVariants}>
           <p className={styles.sectionSubText}>What others say</p>
           <h2 className={styles.sectionHeadText}>Testimonials.</h2>
         </motion.div>
