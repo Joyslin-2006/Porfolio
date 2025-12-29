@@ -72,7 +72,7 @@ const Experience = () => {
   const textVariants = isMobile ? {} : textVariant();
 
   return (
-    <div className='relative z-10'>
+    <div className='relative z-20 w-full'>
       <motion.div variants={textVariants}>
         <p className={`${styles.sectionSubText} text-center text-white`}>
           What I have done so far

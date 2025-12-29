@@ -18,9 +18,7 @@ const App = () => {
         <div className='relative z-10'>
           <Contact />
         </div>
-        <div className='absolute inset-0 z-[-1]'>
-          <StarsCanvas />
-        </div>
+        <StarsCanvas />
       </div>
     </BrowserRouter>
   );

@@ -98,7 +98,7 @@ const Works = () => {
   const fadeVariants = isMobile ? {} : fadeIn("", "", 0.1, 1);
 
   return (
-    <div className='relative z-10'>
+    <div className='relative z-20 w-full'>
       <motion.div variants={textVariants}>
         <p className={`${styles.sectionSubText} text-white`}>My work</p>
         <h2 className={`${styles.sectionHeadText} text-white`}>Projects.</h2>

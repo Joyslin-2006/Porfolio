@@ -75,7 +75,7 @@ const Feedbacks = () => {
   const textVariants = isMobile ? {} : textVariant();
 
   return (
-    <div className={`mt-12 bg-black-100 rounded-[20px] relative z-10`}>
+    <div className={`mt-12 bg-black-100 rounded-[20px] relative z-20 w-full`}>
       <div
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
       >
